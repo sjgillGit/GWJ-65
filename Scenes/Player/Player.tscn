@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://brcvp8135a42f"]
+[gd_scene load_steps=8 format=3 uid="uid://brcvp8135a42f"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_gpslx"]
 [ext_resource type="Script" path="res://Scripts/Player/Camera.gd" id="1_kcbck"]
 [ext_resource type="Script" path="res://Scripts/Player/MovingController.gd" id="3_a2apq"]
 [ext_resource type="Script" path="res://Scripts/Player/Interaction.gd" id="3_hq6kq"]
+[ext_resource type="Script" path="res://Scripts/Player/InventoryController.gd" id="5_xbl3f"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_udnbu"]
 
@@ -32,3 +33,6 @@ script = ExtResource("3_hq6kq")
 
 [node name="MovingController" type="Node" parent="."]
 script = ExtResource("3_a2apq")
+
+[node name="InventoryController" type="Node" parent="."]
+script = ExtResource("5_xbl3f")

@@ -7,8 +7,7 @@ extends RayCast3D
 var interaction_hint: Label
 var interaction_cross: ColorRect
 
-@onready
-var player: Node3D = get_node("../../../")
+@onready var player: Player = get_node("../../../")
 
 
 func _ready():
@@ -18,15 +17,23 @@ func _ready():
 
 
 func _process(_delta):
-	var item = get_item()
+	var item = get_item_to_interact()
 	interaction_cross.visible = item != null
 	interaction_hint.visible = item != null
 	if item != null:
-		interaction_hint.text = item.get_item_name()
+		interaction_hint.text = item.get_interaction_hint()
 		if Input.is_action_just_pressed("ui_interact"):
-			item.use()
+			item.interact(get_interaction_tool())
 
 
-func get_item() -> ItemBase:
+func get_item_to_interact():
 	var item = get_collider()
-	return item if item is ItemBase else null
+	if item and item.has_method("get_interaction_hint"):
+		return item
+	else: 
+		return null
+
+
+func get_interaction_tool() -> String:
+	var item_code = player.inventory.get_active_item()
+	return item_code if item_code != "" else "none"

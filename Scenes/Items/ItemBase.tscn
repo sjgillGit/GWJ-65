@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddvxliv66bnpe"]
+
+[ext_resource type="Script" path="res://Scripts/Items/ItemBase.gd" id="1_nw68l"]
+
+[node name="ItemBase" type="RigidBody3D"]
+script = ExtResource("1_nw68l")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]

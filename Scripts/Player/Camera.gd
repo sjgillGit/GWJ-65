@@ -4,10 +4,8 @@ extends Camera3D
 # Rotating FPS camera by mouse
 #--------------------
 
-@onready
-var controller_node: Node3D = get_node('../')
-@onready
-var player: Node3D = get_node('../../')
+@onready var controller_node: Node3D = get_node('../')
+@onready var player: Node3D = get_node('../../')
 
 const MOUSE_SENSITIVITY = 0.1
 const MIN_Y_ROT = -70

@@ -2,9 +2,7 @@ extends Node
 
 class_name Lang
 
-enum LangCode {En}
-
-static var current_lang_code: LangCode = LangCode.En
+static var current_lang_code: Enums.LangCode = Enums.LangCode.En
 
 
 static func get_item_data(code: String) -> Dictionary:
@@ -27,7 +25,7 @@ static func get_trans(code: String, file: String) -> String:
 
 
 static func get_lang_code() -> String:
-	return LangCode.keys()[current_lang_code]
+	return Enums.LangCode.keys()[current_lang_code]
 
 
 static func read_json_file(file_path):

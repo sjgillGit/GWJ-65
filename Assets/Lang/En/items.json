@@ -1,5 +1,8 @@
 {
-	"test": {
-		"name": "Test Item"
+	"PrintBox": {
+		"name": "Debug Print Box"
+	},
+	"Screwdriver": {
+		"name": "A Screwdriver"
 	}
 }
