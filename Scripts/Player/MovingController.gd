@@ -7,7 +7,6 @@ extends Node
 @onready
 var player = get_parent()
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 

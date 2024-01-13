@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://brcvp8135a42f"]
+[gd_scene load_steps=7 format=3 uid="uid://brcvp8135a42f"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_gpslx"]
 [ext_resource type="Script" path="res://Scripts/Player/Camera.gd" id="1_kcbck"]
 [ext_resource type="Script" path="res://Scripts/Player/MovingController.gd" id="3_a2apq"]
+[ext_resource type="Script" path="res://Scripts/Player/Interaction.gd" id="3_hq6kq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_udnbu"]
 
@@ -12,18 +13,22 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04182, 0)
 script = ExtResource("1_gpslx")
 
-[node name="shape" type="CollisionShape3D" parent="."]
+[node name="Shape" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_udnbu")
 
-[node name="mesh" type="MeshInstance3D" parent="shape"]
+[node name="Mesh" type="MeshInstance3D" parent="Shape"]
 cast_shadow = 3
 mesh = SubResource("CapsuleMesh_0fcv1")
 
-[node name="camera_controller" type="Node3D" parent="."]
+[node name="CameraController" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649462, 0)
 
-[node name="camera" type="Camera3D" parent="camera_controller"]
+[node name="Camera" type="Camera3D" parent="CameraController"]
 script = ExtResource("1_kcbck")
 
-[node name="moving_controller" type="Node" parent="."]
+[node name="InteractionRay" type="RayCast3D" parent="CameraController/Camera"]
+target_position = Vector3(0, 0, -2)
+script = ExtResource("3_hq6kq")
+
+[node name="MovingController" type="Node" parent="."]
 script = ExtResource("3_a2apq")
