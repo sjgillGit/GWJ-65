@@ -12,7 +12,7 @@ class_name Inventory
 
 var left_item: ItemBase
 var right_item: ItemBase
-var active_hand: Enums.HandType = Enums.HandType.LEFT
+var active_hand: Enums.HandType = Enums.HandType.RIGHT
 
 signal item_picked(hand_type: Enums.HandType, item_code: String)
 signal item_dropped(hand_type: Enums.HandType)

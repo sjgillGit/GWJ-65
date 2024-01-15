@@ -44,7 +44,6 @@ offset_top = -64.0
 offset_right = -8.0
 offset_bottom = -8.0
 grow_vertical = 0
-is_active = true
 
 [node name="RightHand" parent="." instance=ExtResource("1_267vx")]
 anchors_preset = 7
@@ -58,3 +57,4 @@ offset_right = 56.0
 offset_bottom = -8.0
 grow_vertical = 0
 hand_type = 1
+is_active = true
