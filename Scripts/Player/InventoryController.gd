@@ -14,9 +14,14 @@ var left_item: ItemBase
 var right_item: ItemBase
 var active_hand: Enums.HandType = Enums.HandType.RIGHT
 
+var backpack: ItemBase
+
 signal item_picked(hand_type: Enums.HandType, item_code: String)
 signal item_dropped(hand_type: Enums.HandType)
 signal active_hand_switched()
+
+signal wear_backpack(item_code: String)
+signal unwear_backpack()
 
 
 func _process(_delta) -> void:
@@ -26,9 +31,12 @@ func _process(_delta) -> void:
 		drop_item()
 
 
-func get_active_item() -> String:
-	var active_item = left_item if active_hand == Enums.HandType.LEFT else right_item
-	return active_item.code if active_item != null else ""
+func get_active_item() -> ItemBase:
+	return left_item if active_hand == Enums.HandType.LEFT else right_item
+
+
+func use_item() -> void:
+	pass
 
 
 func pick_item(item: ItemBase) -> void:
@@ -43,16 +51,18 @@ func pick_item(item: ItemBase) -> void:
 
 
 func drop_item() -> void:
-	var new_item_parent = G.player.get_parent()
+	var active_item = get_active_item()
+	if active_item == null: return
 	
-	if active_hand == Enums.HandType.LEFT && left_item != null:
-		move_item_to_parent(left_item, new_item_parent, false)		
+	var new_item_parent = G.player.get_parent()
+	move_item_to_parent(active_item, new_item_parent, false)	
+	
+	if active_hand == Enums.HandType.LEFT:
 		left_item = null
-		item_dropped.emit(active_hand)
 	elif right_item != null:
-		move_item_to_parent(right_item, new_item_parent, false)
 		right_item = null
-		item_dropped.emit(active_hand)
+	
+	item_dropped.emit(active_hand)
 
 
 func move_item_to_parent(item, new_parent: Node3D, to_player: bool) -> void:

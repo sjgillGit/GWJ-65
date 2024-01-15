@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://do7y81r47wqcy"]
+
+[ext_resource type="Script" path="res://Scripts/Items/BackpackItem.gd" id="1_5f4mk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gpwd5"]
+albedo_color = Color(0.290196, 0.431373, 0.976471, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_dpiqm"]
+material = SubResource("StandardMaterial3D_gpwd5")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_w6kti"]
+height = 0.202021
+radius = 0.393103
+
+[node name="Backpack" type="RigidBody3D"]
+script = ExtResource("1_5f4mk")
+code = "Backpack"
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+mesh = SubResource("TorusMesh_dpiqm")
+
+[node name="Shape" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_w6kti")

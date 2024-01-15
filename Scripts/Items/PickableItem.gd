@@ -1,5 +1,7 @@
 extends ItemBase
 
+class_name PickableItem
+
 #--------------------
 # Class for pickable items
 # Player can pick item only with empty hands

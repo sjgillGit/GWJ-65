@@ -34,10 +34,9 @@ func get_item_to_interact():
 	var item = get_collider()
 	if item and item.has_method("get_interaction_hint"):
 		return item
-	else: 
-		return null
+	return null
 
 
 func get_interaction_tool() -> String:
-	var item_code = player.inventory.get_active_item()
-	return item_code if item_code != "" else "none"
+	var item = player.inventory.get_active_item()
+	return item.code if item != null else "none"

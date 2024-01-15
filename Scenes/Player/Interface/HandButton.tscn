@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://def7jon6tvngq"]
 
-[ext_resource type="Script" path="res://Scripts/Player/HandButton.gd" id="1_5grlb"]
+[ext_resource type="Script" path="res://Scripts/Interface/HandButton.gd" id="1_5grlb"]
 
 [node name="HandButton" type="ColorRect"]
 anchors_preset = -1

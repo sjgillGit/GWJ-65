@@ -4,5 +4,8 @@
 	},
 	"Screwdriver": {
 		"name": "A Screwdriver"
+	},
+	"Backpack": {
+		"name": "Not a torus, but a backpack!"
 	}
 }
