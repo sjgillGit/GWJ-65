@@ -12,6 +12,10 @@ var interaction_cross: ColorRect
 
 func _ready():
 	var interface_parent = player.interface_parent
+	if interface_parent == null: 
+		set_process(false)
+		return
+	
 	interaction_hint = interface_parent.get_node("InteractionHint")
 	interaction_cross = interface_parent.get_node("Cross")
 

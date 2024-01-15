@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://croj7xj2i54mj"
-path="res://.godot/imported/screwdriver_icon.png-62d5ace8af6f50300e6e25fc2e3168ad.ctex"
+path="res://.godot/imported/Screwdriver.png-71312261fb08d4c0c06e9b6b8870335d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Interface/Icons/screwdriver_icon.png"
-dest_files=["res://.godot/imported/screwdriver_icon.png-62d5ace8af6f50300e6e25fc2e3168ad.ctex"]
+source_file="res://Assets/Interface/Icons/Screwdriver.png"
+dest_files=["res://.godot/imported/Screwdriver.png-71312261fb08d4c0c06e9b6b8870335d.ctex"]
 
 [params]
 

@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://def7jon6tvngq"]
+[gd_scene load_steps=2 format=3 uid="uid://def7jon6tvngq"]
 
 [ext_resource type="Script" path="res://Scripts/Player/HandButton.gd" id="1_5grlb"]
-[ext_resource type="Texture2D" uid="uid://croj7xj2i54mj" path="res://Assets/Interface/Icons/screwdriver_icon.png" id="2_v51k1"]
 
 [node name="HandButton" type="ColorRect"]
 anchors_preset = -1
@@ -15,7 +14,6 @@ color = Color(0, 0, 0, 1)
 script = ExtResource("1_5grlb")
 
 [node name="Icon" type="TextureRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,7 +24,6 @@ offset_right = -2.0
 offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_v51k1")
 expand_mode = 4
 
 [node name="ActiveBorders" type="Control" parent="."]

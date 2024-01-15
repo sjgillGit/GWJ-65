@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dqkr1iqdlrnte"]
+[gd_scene load_steps=12 format=3 uid="uid://dqkr1iqdlrnte"]
 
 [ext_resource type="PackedScene" uid="uid://brcvp8135a42f" path="res://Scenes/Player/Player.tscn" id="1_7sf08"]
 [ext_resource type="PackedScene" uid="uid://b2ng62uftnqqa" path="res://Scenes/Player/Interface/PlayerInterface.tscn" id="3_mol1n"]
@@ -24,8 +24,7 @@ sky_material = SubResource("ProceduralSkyMaterial_rppth")
 [sub_resource type="Environment" id="Environment_n40u1"]
 background_mode = 2
 sky = SubResource("Sky_q7fed")
-
-[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_0vhe2"]
+reflected_light_source = 1
 
 [node name="PlayerTest" type="Node3D"]
 
@@ -85,10 +84,10 @@ shape = SubResource("ConvexPolygonShape3D_uvj3c")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_n40u1")
-camera_attributes = SubResource("CameraAttributesPhysical_0vhe2")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.5, 0.75, -0.433013, 0, 0.5, 0.866025, 0.866025, -0.433013, 0.25, 0, 3, 0)
+layers = 3
 shadow_enabled = true
 
 [node name="CanvasLayer" parent="." instance=ExtResource("3_mol1n")]
