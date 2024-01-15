@@ -1,0 +1,145 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2ng62uftnqqa"]
+
+[ext_resource type="PackedScene" uid="uid://def7jon6tvngq" path="res://Scenes/Player/Interface/HandButton.tscn" id="1_267vx"]
+[ext_resource type="Script" path="res://Scripts/Interface/BackpackButton.gd" id="2_gkpo6"]
+[ext_resource type="Texture2D" uid="uid://bwmfhhy4dh025" path="res://Assets/Interface/Icons/Backpack.png" id="2_ymrfa"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="InteractionHint" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = 28.0
+offset_right = 161.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cross" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -12.0
+offset_right = 8.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftHand" parent="." instance=ExtResource("1_267vx")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = -64.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_vertical = 0
+
+[node name="RightHand" parent="." instance=ExtResource("1_267vx")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -64.0
+offset_right = 56.0
+offset_bottom = -8.0
+grow_vertical = 0
+hand_type = 1
+is_active = true
+
+[node name="Backpack" type="ColorRect" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -60.0
+offset_right = 64.0
+offset_bottom = -4.0
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("2_gkpo6")
+metadata/_edit_group_ = true
+
+[node name="Icon" type="TextureRect" parent="Backpack"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 4
+
+[node name="BackIcon" type="TextureRect" parent="Backpack"]
+modulate = Color(0.631373, 0.631373, 0.631373, 0.584314)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ymrfa")
+expand_mode = 4
+
+[node name="Borders" type="Control" parent="Backpack"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="up" type="ColorRect" parent="Backpack/Borders"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+
+[node name="down" type="ColorRect" parent="Backpack/Borders"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="left" type="ColorRect" parent="Backpack/Borders"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+
+[node name="right" type="ColorRect" parent="Backpack/Borders"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2

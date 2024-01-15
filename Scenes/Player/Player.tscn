@@ -1,0 +1,83 @@
+[gd_scene load_steps=9 format=3 uid="uid://brcvp8135a42f"]
+
+[ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_gpslx"]
+[ext_resource type="Script" path="res://Scripts/Player/Camera.gd" id="1_kcbck"]
+[ext_resource type="Script" path="res://Scripts/Player/MovingController.gd" id="3_a2apq"]
+[ext_resource type="Script" path="res://Scripts/Player/Interaction.gd" id="3_hq6kq"]
+[ext_resource type="Script" path="res://Scripts/Player/InventoryController.gd" id="5_xbl3f"]
+
+[sub_resource type="GDScript" id="GDScript_fb13t"]
+script/source = "extends Camera3D
+
+#--------------------
+# Camera for rendering tools in other layer
+# So that tools don't clip through textures
+#--------------------
+
+@export var main_camera: Camera3D
+
+
+func _process(_delta):
+	global_transform = main_camera.global_transform
+"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_udnbu"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0fcv1"]
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04182, 0)
+script = ExtResource("1_gpslx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="ToolsCamera" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport" node_paths=PackedStringArray("main_camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.69128, 0)
+cull_mask = 2
+script = SubResource("GDScript_fb13t")
+main_camera = NodePath("../../../../CameraController/Camera")
+
+[node name="Shape" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_udnbu")
+
+[node name="Mesh" type="MeshInstance3D" parent="Shape"]
+cast_shadow = 3
+mesh = SubResource("CapsuleMesh_0fcv1")
+
+[node name="CameraController" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649462, 0)
+
+[node name="Camera" type="Camera3D" parent="CameraController"]
+cull_mask = 229
+script = ExtResource("1_kcbck")
+
+[node name="InteractionRay" type="RayCast3D" parent="CameraController/Camera"]
+target_position = Vector3(0, 0, -2)
+script = ExtResource("3_hq6kq")
+
+[node name="LeftItemParent" type="Node3D" parent="CameraController/Camera"]
+transform = Transform3D(1, 0, 0, 0, -0.952129, 0.305695, 0, -0.305695, -0.952129, -1.259, -0.625, -1.301)
+
+[node name="RightItemParent" type="Node3D" parent="CameraController/Camera"]
+transform = Transform3D(1, 0, 0, 0, -0.952129, 0.305695, 0, -0.305695, -0.952129, 1.259, -0.625, -1.301)
+
+[node name="MovingController" type="Node" parent="."]
+script = ExtResource("3_a2apq")
+
+[node name="InventoryController" type="Node" parent="."]
+script = ExtResource("5_xbl3f")

@@ -1,0 +1,136 @@
+[gd_scene load_steps=2 format=3 uid="uid://def7jon6tvngq"]
+
+[ext_resource type="Script" path="res://Scripts/Interface/HandButton.gd" id="1_5grlb"]
+
+[node name="HandButton" type="ColorRect"]
+anchors_preset = -1
+anchor_right = 0.056
+anchor_bottom = 0.111
+offset_right = -0.512001
+offset_bottom = 0.071991
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_5grlb")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 4
+
+[node name="ActiveBorders" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="up" type="ColorRect" parent="ActiveBorders"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 3.0
+grow_horizontal = 2
+color = Color(0.996078, 0.807843, 0.470588, 1)
+
+[node name="down" type="ColorRect" parent="ActiveBorders"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.996078, 0.807843, 0.470588, 1)
+
+[node name="left" type="ColorRect" parent="ActiveBorders"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 3.0
+grow_vertical = 2
+color = Color(0.996078, 0.807843, 0.470588, 1)
+
+[node name="right" type="ColorRect" parent="ActiveBorders"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.996078, 0.807843, 0.470588, 1)
+
+[node name="Borders" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="up" type="ColorRect" parent="Borders"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+
+[node name="down" type="ColorRect" parent="Borders"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="left" type="ColorRect" parent="Borders"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+
+[node name="right" type="ColorRect" parent="Borders"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="LeftHandLabel" type="Label" parent="."]
+visible = false
+layout_mode = 1
+offset_right = 16.0
+offset_bottom = 23.0
+text = "L"
+horizontal_alignment = 1
+
+[node name="RightHandLabel" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -16.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "R"
+horizontal_alignment = 1
