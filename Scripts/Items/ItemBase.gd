@@ -1,4 +1,4 @@
-extends Node
+extends RigidBody3D
 
 #--------------------
 # Base class for interactable items

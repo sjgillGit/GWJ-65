@@ -28,6 +28,8 @@ func _ready():
 	G.player.inventory.active_hand_switched.connect(on_active_hand_switched)
 	G.player.inventory.item_picked.connect(on_pick_item)
 	G.player.inventory.item_dropped.connect(on_drop_item)
+	G.player.inventory.wear_backpack.connect(on_wear_item)
+	G.player.inventory.take_off_backpack.connect(on_pick_item)
 
 
 func on_active_hand_switched() -> void:
@@ -48,5 +50,10 @@ func on_pick_item(active_hand_type: Enums.HandType, item_code: String) -> void:
 
 
 func on_drop_item(active_hand_type: Enums.HandType) -> void:
+	if active_hand_type == hand_type:
+		icon.texture = null
+
+
+func on_wear_item(active_hand_type: Enums.HandType, _item_code: String) -> void:
 	if active_hand_type == hand_type:
 		icon.texture = null
