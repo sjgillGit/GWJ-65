@@ -15,6 +15,7 @@ var is_running: bool = false
 @export var interface_parent: CanvasLayer
 
 @onready var inventory: Inventory = $InventoryController
+@onready var interaction: RayCast3D = get_node("CameraController/Camera/InteractionRay")
 
-func _ready():
+func _ready() -> void:
 	G.player = self

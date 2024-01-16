@@ -70,6 +70,7 @@ func drop_item() -> void:
 	active_item.move_item_to_parent(G.player.get_parent())
 	active_item.freeze_item(false)
 	active_item.set_mesh_tools_layer(false)
+	active_item.global_position = G.player.interaction.get_look_at_point()
 	set_active_item(null)
 	
 	item_dropped.emit(active_hand)
