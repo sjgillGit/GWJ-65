@@ -21,13 +21,15 @@ func _ready() -> void:
 
 
 func _process(_delta) -> void:
-	var item = get_item_to_interact()
+	var item = get_item_to_interact() if player.may_move else null
 	interaction_cross.visible = item != null
 	interaction_hint.visible = item != null
 	if item != null:
 		interaction_hint.text = item.get_interaction_hint()
 		if Input.is_action_just_pressed("ui_interact"):
 			item.interact(get_interaction_tool())
+		if Input.is_action_just_pressed("ui_use") && item.has_method("use"):
+			item.use(player.hands)
 
 
 func get_item_to_interact() -> Node3D:
@@ -38,7 +40,7 @@ func get_item_to_interact() -> Node3D:
 
 
 func get_interaction_tool() -> String:
-	var item = player.inventory.get_active_item()
+	var item = player.hands.get_active_item()
 	return item.code if item != null else "none"
 
 

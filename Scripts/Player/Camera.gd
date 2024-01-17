@@ -34,5 +34,5 @@ func update_camera_rotation(event: InputEventMouseMotion) -> void:
 	player.rotate_y(deg_to_rad(event.relative.x * MOUSE_SENSITIVITY * -1))
 	
 	var camera_rot = controller_node.rotation_degrees
-	camera_rot.y = clamp(camera_rot.y, MIN_Y_ROT, MAX_Y_ROT)
+	camera_rot.x = clamp(camera_rot.x, MIN_Y_ROT, MAX_Y_ROT)
 	controller_node.rotation_degrees = camera_rot

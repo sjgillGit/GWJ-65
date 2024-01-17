@@ -2,55 +2,54 @@ extends Node
 
 #--------------------
 # Handles storing and holding items
-# Has left and right arm and one slot for backpack (WIP)
+# Has left and right arm
 #--------------------
 
-class_name Inventory
+class_name HandsController
 
 @onready var left_item_parent: Node3D = get_node("../CameraController/Camera/LeftItemParent")
 @onready var right_item_parent: Node3D = get_node("../CameraController/Camera/RightItemParent")
 
-var left_item: ItemBase
-var right_item: ItemBase
+@onready var backpack_controller: BackpackController = get_node("../BackpackController")
+
+var left_item: PickableItem
+var right_item: PickableItem
 var active_hand: Enums.HandType = Enums.HandType.RIGHT
 
-var backpack: BackpackItem
+var may_use_hands: bool = true
 
-signal item_picked(hand_type: Enums.HandType, item_code: String)
-signal item_dropped(hand_type: Enums.HandType)
+signal item_picked(item_code: String)
+signal item_dropped()
 signal active_hand_switched()
 
-signal wear_backpack(hand_type: Enums.HandType, item_code: String)
-signal take_off_backpack(hand_type: Enums.HandType, backpack_code: String)
 
 
 func _process(_delta) -> void:
-	if Input.is_action_just_pressed("ui_switch_hand"):
-		switch_active_hand() 
+	if Input.is_action_just_pressed("ui_use"):
+		use_item()
 	if Input.is_action_just_pressed("ui_drop"):
 		drop_item()
-	if Input.is_action_just_pressed("ui_wear"):
-		wear_item()
+	if may_use_hands:
+		if Input.is_action_just_pressed("ui_switch_hand"):
+			switch_active_hand() 
+		if Input.is_action_just_pressed("ui_wear"):
+			wear_item()
 
 
-func get_active_item() -> ItemBase:
+func get_active_item() -> PickableItem:
 	return left_item if active_hand == Enums.HandType.LEFT else right_item
+
+
+func use_item() -> void:
+	var item = get_active_item()
+	if item != null && item.has_method("use"):
+		item.use(self)
 
 
 func wear_item() -> void:
 	var item = get_active_item()
-	if item != null:
-		if item.has_method("wear"):
-			set_active_item(null)
-			item.wear(self)
-			wear_backpack.emit(active_hand, item.code)
-			backpack = item
-	
-	elif backpack != null:
-		backpack.take_off(self)
-		set_active_item(backpack)
-		take_off_backpack.emit(active_hand, backpack.code)
-		backpack = null
+	if item != null && item.has_method("wear"):
+		item.wear(self)
 
 
 func pick_item(item: ItemBase) -> void:
@@ -60,7 +59,7 @@ func pick_item(item: ItemBase) -> void:
 	item.set_mesh_tools_layer(true)
 	item.position = Vector3.ZERO
 	item.rotation = Vector3.ZERO
-	item_picked.emit(active_hand, item.code)
+	item_picked.emit(item)
 
 
 func drop_item() -> void:
@@ -73,7 +72,7 @@ func drop_item() -> void:
 	active_item.global_position = G.player.interaction.get_look_at_point()
 	set_active_item(null)
 	
-	item_dropped.emit(active_hand)
+	item_dropped.emit()
 
 
 func get_active_hand_parent() -> Node3D:

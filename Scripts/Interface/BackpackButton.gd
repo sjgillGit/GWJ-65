@@ -10,16 +10,16 @@ extends ColorRect
 
 func _ready():
 	assert(G.player != null, "please move player up in scene tree")
-	G.player.inventory.wear_backpack.connect(on_wear_backpack)
-	G.player.inventory.take_off_backpack.connect(on_take_off_backpack)
+	G.player.backpack.is_on.connect(on_wear_backpack)
+	G.player.backpack.is_removed.connect(on_take_off_backpack)
 
 
-func on_wear_backpack(_active_hand_type: Enums.HandType, code: String) -> void:
+func on_wear_backpack(backpack_item: BackpackItem) -> void:
 	var item_icon = load("res://Assets/Interface/Icons/{code}.png".format({
-			"code": code
+			"code": backpack_item.code
 		}))
 	icon.texture = item_icon
 
 
-func on_take_off_backpack(_active_hand_type: Enums.HandType, _code: String) -> void:
+func on_take_off_backpack(_backpack_item: BackpackItem) -> void:
 	icon.texture = null

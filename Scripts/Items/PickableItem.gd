@@ -5,18 +5,33 @@ class_name PickableItem
 #--------------------
 # Class for pickable items
 # Player can pick item only with empty hands
+# When is in container - invisible but still exists in the world
 #--------------------
 
 @onready var mesh: MeshInstance3D = $Mesh
+
+@export var is_in_container: bool
+
+
+func _ready():
+	assert(G.player != null, "please move player up in scene tree")
+	if is_in_container:
+		call_deferred("hide_item_in_backpack")
 
 
 func interact(tool: String) -> void:
 	if tool != "none": 
 		return
-	G.player.inventory.pick_item(self)
+	G.player.hands.pick_item(self)
 
 
-func move_item_to_parent(new_parent: Node3D) -> void:
+func hide_item_in_backpack() -> void:
+	visible = false
+	move_item_to_parent(G.player.backpack_items_parent)
+	freeze_item(true)
+
+
+func move_item_to_parent(new_parent: Node) -> void:
 	var old_position = global_position
 	var old_rotation = global_rotation
 	get_parent().remove_child(self)

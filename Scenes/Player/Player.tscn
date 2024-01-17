@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://brcvp8135a42f"]
+[gd_scene load_steps=10 format=3 uid="uid://brcvp8135a42f"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_gpslx"]
 [ext_resource type="Script" path="res://Scripts/Player/Camera.gd" id="1_kcbck"]
 [ext_resource type="Script" path="res://Scripts/Player/MovingController.gd" id="3_a2apq"]
 [ext_resource type="Script" path="res://Scripts/Player/Interaction.gd" id="3_hq6kq"]
-[ext_resource type="Script" path="res://Scripts/Player/InventoryController.gd" id="5_xbl3f"]
+[ext_resource type="Script" path="res://Scripts/Player/HandsController.gd" id="5_q6nm8"]
+[ext_resource type="Script" path="res://Scripts/Player/BackpackController.gd" id="6_mmthk"]
 
 [sub_resource type="GDScript" id="GDScript_fb13t"]
 script/source = "extends Camera3D
@@ -30,7 +31,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04182, 0)
 script = ExtResource("1_gpslx")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 2
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
 anchors_preset = 15
@@ -43,6 +43,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
 transparent_bg = true
 handle_input_locally = false
+gui_disable_input = true
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
@@ -79,5 +80,8 @@ transform = Transform3D(1, 0, 0, 0, -0.952129, 0.305695, 0, -0.305695, -0.952129
 [node name="MovingController" type="Node" parent="."]
 script = ExtResource("3_a2apq")
 
-[node name="InventoryController" type="Node" parent="."]
-script = ExtResource("5_xbl3f")
+[node name="HandsController" type="Node" parent="."]
+script = ExtResource("5_q6nm8")
+
+[node name="BackpackController" type="Node" parent="."]
+script = ExtResource("6_mmthk")

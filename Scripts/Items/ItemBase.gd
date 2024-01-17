@@ -10,6 +10,7 @@ class_name ItemBase
 
 @export var code: String
 
+
 func get_interaction_hint() -> String: 
 	return Lang.get_item_data(code).name
 

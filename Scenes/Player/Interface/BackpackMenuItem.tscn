@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://dic0jq86xwng5"]
+
+[ext_resource type="Script" path="res://Scripts/Interface/BackpackMenuItem.gd" id="1_xm677"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flbj6"]
+bg_color = Color(0.0588235, 0.0588235, 0.0588235, 1)
+
+[sub_resource type="Theme" id="Theme_wmbcb"]
+Button/styles/focus = SubResource("StyleBoxFlat_flbj6")
+
+[node name="BackpackMenuItem" type="Button"]
+custom_minimum_size = Vector2(48, 48)
+offset_right = 48.0
+offset_bottom = 48.0
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_wmbcb")
+script = ExtResource("1_xm677")
+
+[node name="Borders" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="up" type="ColorRect" parent="Borders"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+
+[node name="down" type="ColorRect" parent="Borders"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="left" type="ColorRect" parent="Borders"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+
+[node name="right" type="ColorRect" parent="Borders"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 4
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
