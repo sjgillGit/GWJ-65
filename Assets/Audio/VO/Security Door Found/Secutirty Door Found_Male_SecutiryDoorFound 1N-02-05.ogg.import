@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dksdfjgn3rd8p"
+path="res://.godot/imported/Secutirty Door Found_Male_SecutiryDoorFound 1N-02-05.ogg-97385d2a7ff9c1bfbb62ff5231c88ce6.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/VO/Security Door Found/Secutirty Door Found_Male_SecutiryDoorFound 1N-02-05.ogg"
+dest_files=["res://.godot/imported/Secutirty Door Found_Male_SecutiryDoorFound 1N-02-05.ogg-97385d2a7ff9c1bfbb62ff5231c88ce6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

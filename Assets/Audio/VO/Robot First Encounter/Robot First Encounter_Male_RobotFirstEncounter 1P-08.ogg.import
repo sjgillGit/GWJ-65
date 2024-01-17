@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c3lpxrd1goteq"
+path="res://.godot/imported/Robot First Encounter_Male_RobotFirstEncounter 1P-08.ogg-768b2c87353c9085835ff7b54b2f9c6d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/VO/Robot First Encounter/Robot First Encounter_Male_RobotFirstEncounter 1P-08.ogg"
+dest_files=["res://.godot/imported/Robot First Encounter_Male_RobotFirstEncounter 1P-08.ogg-768b2c87353c9085835ff7b54b2f9c6d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

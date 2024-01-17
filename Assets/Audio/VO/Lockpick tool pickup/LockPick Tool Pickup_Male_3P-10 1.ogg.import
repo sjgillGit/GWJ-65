@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bwsauxba0hvfa"
+path="res://.godot/imported/LockPick Tool Pickup_Male_3P-10 1.ogg-d4414fbaece80588302e7cab57260f27.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/VO/Lockpick tool pickup/LockPick Tool Pickup_Male_3P-10 1.ogg"
+dest_files=["res://.godot/imported/LockPick Tool Pickup_Male_3P-10 1.ogg-d4414fbaece80588302e7cab57260f27.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

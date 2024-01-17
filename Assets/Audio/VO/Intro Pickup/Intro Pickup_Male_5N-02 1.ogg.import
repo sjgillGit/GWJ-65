@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d3xdyb6evnqdw"
+path="res://.godot/imported/Intro Pickup_Male_5N-02 1.ogg-a3d4df8d1392fcbbff5fadf81fff141a.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/VO/Intro Pickup/Intro Pickup_Male_5N-02 1.ogg"
+dest_files=["res://.godot/imported/Intro Pickup_Male_5N-02 1.ogg-a3d4df8d1392fcbbff5fadf81fff141a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

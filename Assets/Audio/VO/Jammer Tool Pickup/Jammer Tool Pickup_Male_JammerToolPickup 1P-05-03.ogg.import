@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://deuvwk62s460v"
+path="res://.godot/imported/Jammer Tool Pickup_Male_JammerToolPickup 1P-05-03.ogg-afe6dd15d35efc4254802566ef057c6c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/VO/Jammer Tool Pickup/Jammer Tool Pickup_Male_JammerToolPickup 1P-05-03.ogg"
+dest_files=["res://.godot/imported/Jammer Tool Pickup_Male_JammerToolPickup 1P-05-03.ogg-afe6dd15d35efc4254802566ef057c6c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

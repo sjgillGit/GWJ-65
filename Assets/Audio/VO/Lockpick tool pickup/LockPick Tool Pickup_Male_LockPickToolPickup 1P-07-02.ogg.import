@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://be4exopu761e5"
+path="res://.godot/imported/LockPick Tool Pickup_Male_LockPickToolPickup 1P-07-02.ogg-a336456ee2e5ef414303cc23827f8d97.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/VO/Lockpick tool pickup/LockPick Tool Pickup_Male_LockPickToolPickup 1P-07-02.ogg"
+dest_files=["res://.godot/imported/LockPick Tool Pickup_Male_LockPickToolPickup 1P-07-02.ogg-a336456ee2e5ef414303cc23827f8d97.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

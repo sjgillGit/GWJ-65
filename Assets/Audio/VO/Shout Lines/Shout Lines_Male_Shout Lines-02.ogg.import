@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cnm7nk2g0h52u"
+path="res://.godot/imported/Shout Lines_Male_Shout Lines-02.ogg-c9f72f23017751d6935bfdc797223a9b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/VO/Shout Lines/Shout Lines_Male_Shout Lines-02.ogg"
+dest_files=["res://.godot/imported/Shout Lines_Male_Shout Lines-02.ogg-c9f72f23017751d6935bfdc797223a9b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
