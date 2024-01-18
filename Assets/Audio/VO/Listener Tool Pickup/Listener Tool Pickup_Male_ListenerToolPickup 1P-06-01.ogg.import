@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ln8dcqx6nkd"
+path="res://.godot/imported/Listener Tool Pickup_Male_ListenerToolPickup 1P-06-01.ogg-321204623232a288d790ac1ed75cab36.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/VO/Listener Tool Pickup/Listener Tool Pickup_Male_ListenerToolPickup 1P-06-01.ogg"
+dest_files=["res://.godot/imported/Listener Tool Pickup_Male_ListenerToolPickup 1P-06-01.ogg-321204623232a288d790ac1ed75cab36.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

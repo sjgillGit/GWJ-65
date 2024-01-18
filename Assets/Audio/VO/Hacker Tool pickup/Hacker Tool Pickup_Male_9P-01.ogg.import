@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://t3cvqi3kdomy"
+path="res://.godot/imported/Hacker Tool Pickup_Male_9P-01.ogg-70c97e73caf0a01c0d8c7939be8a912e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/VO/Hacker Tool pickup/Hacker Tool Pickup_Male_9P-01.ogg"
+dest_files=["res://.godot/imported/Hacker Tool Pickup_Male_9P-01.ogg-70c97e73caf0a01c0d8c7939be8a912e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

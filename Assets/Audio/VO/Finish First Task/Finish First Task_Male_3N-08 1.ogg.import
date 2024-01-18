@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://s53hhpd57eoi"
+path="res://.godot/imported/Finish First Task_Male_3N-08 1.ogg-0f8ec3def5cebc03f7fc7561a269b8b8.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/VO/Finish First Task/Finish First Task_Male_3N-08 1.ogg"
+dest_files=["res://.godot/imported/Finish First Task_Male_3N-08 1.ogg-0f8ec3def5cebc03f7fc7561a269b8b8.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

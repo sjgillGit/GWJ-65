@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c7eu6ywr0wldy"
+path="res://.godot/imported/Exut First Room_Male_4N 1.ogg-bef0c48da083baabea55bc4a88bd087d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/VO/Exit Fist Room/Exut First Room_Male_4N 1.ogg"
+dest_files=["res://.godot/imported/Exut First Room_Male_4N 1.ogg-bef0c48da083baabea55bc4a88bd087d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

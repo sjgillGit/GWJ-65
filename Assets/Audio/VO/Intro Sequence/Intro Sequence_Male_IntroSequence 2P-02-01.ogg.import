@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bgxnlky3ssn51"
+path="res://.godot/imported/Intro Sequence_Male_IntroSequence 2P-02-01.ogg-235ad834661f0d4e112267e4d1ee572b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/VO/Intro Sequence/Intro Sequence_Male_IntroSequence 2P-02-01.ogg"
+dest_files=["res://.godot/imported/Intro Sequence_Male_IntroSequence 2P-02-01.ogg-235ad834661f0d4e112267e4d1ee572b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
