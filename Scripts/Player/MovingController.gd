@@ -23,12 +23,13 @@ func handle_gravity(delta: float) -> void:
 
 
 func handle_jump() -> void:
+	if !player.may_move: return
 	if Input.is_action_just_pressed("ui_accept") and player.is_on_floor():
 		player.velocity.y = player.JUMP_VELOCITY
 
 
 func update_player_velocity() -> void:
-	var direction = get_direction()
+	var direction = get_direction() if player.may_move else Vector3.ZERO
 	var speed = get_player_speed()
 	if direction:
 		player.velocity.x = direction.x * speed

@@ -1,4 +1,4 @@
-extends Node
+extends RigidBody3D
 
 #--------------------
 # Base class for interactable items
@@ -9,6 +9,7 @@ extends Node
 class_name ItemBase
 
 @export var code: String
+
 
 func get_interaction_hint() -> String: 
 	return Lang.get_item_data(code).name

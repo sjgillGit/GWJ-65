@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://ih4rq5fwni0o"]
+
+[ext_resource type="Script" path="res://Scripts/Interface/BackpackMenu.gd" id="1_4x8sh"]
+[ext_resource type="PackedScene" uid="uid://dic0jq86xwng5" path="res://Scenes/Player/Interface/BackpackMenuItem.tscn" id="2_0r5rb"]
+
+[node name="BackpackMenu" type="ColorRect"]
+offset_right = 432.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_4x8sh")
+
+[node name="Items" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -176.0
+offset_top = -56.0
+offset_right = 172.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 8
+metadata/_edit_group_ = true
+
+[node name="BackpackItem" parent="Items" instance=ExtResource("2_0r5rb")]
+layout_mode = 2
+
+[node name="BackpackItem2" parent="Items" instance=ExtResource("2_0r5rb")]
+layout_mode = 2
+
+[node name="BackpackItem3" parent="Items" instance=ExtResource("2_0r5rb")]
+layout_mode = 2
+
+[node name="BackpackItem4" parent="Items" instance=ExtResource("2_0r5rb")]
+layout_mode = 2
+
+[node name="BackpackItem5" parent="Items" instance=ExtResource("2_0r5rb")]
+layout_mode = 2
+
+[node name="BackpackItem6" parent="Items" instance=ExtResource("2_0r5rb")]
+layout_mode = 2
+
+[node name="BackpackItem7" parent="Items" instance=ExtResource("2_0r5rb")]
+layout_mode = 2
+
+[node name="BackpackItem8" parent="Items" instance=ExtResource("2_0r5rb")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = 16.0
+offset_right = 72.0
+offset_bottom = 48.0
+grow_horizontal = 2
+text = "Backpack
+"
+horizontal_alignment = 1
+vertical_alignment = 1

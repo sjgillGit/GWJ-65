@@ -29,10 +29,11 @@ reflected_light_source = 1
 
 [node name="PlayerTest" type="Node3D"]
 
-[node name="Player" parent="." node_paths=PackedStringArray("interface_parent", "backpack_items_parent") instance=ExtResource("1_7sf08")]
+[node name="Player" parent="." node_paths=PackedStringArray("interface_parent") instance=ExtResource("1_7sf08")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.519786, 1.12862, 0.585775)
 interface_parent = NodePath("../CanvasLayer")
-backpack_items_parent = NodePath("../BackpackItems")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("3_mol1n")]
 
 [node name="plane" type="StaticBody3D" parent="."]
 metadata/_edit_group_ = true
@@ -99,14 +100,5 @@ is_in_container = false
 [node name="DebugPrintBox" parent="." instance=ExtResource("4_3krxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.78425, 0.566835, -4.41099)
 
-[node name="Backpack" parent="." node_paths=PackedStringArray("container") instance=ExtResource("5_3l5a8")]
+[node name="Backpack" parent="." instance=ExtResource("5_3l5a8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.18702, 1.12088, -0.498131)
-container = [NodePath("../BackpackItems/Screwdriver")]
-
-[node name="BackpackItems" type="Node" parent="."]
-
-[node name="Screwdriver" parent="BackpackItems" instance=ExtResource("3_n74j7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 2)
-is_in_container = true
-
-[node name="CanvasLayer" parent="." instance=ExtResource("3_mol1n")]

@@ -1,4 +1,4 @@
-extends Control
+extends Button
 
 #--------------------
 # Interface for hand holding an item
@@ -10,10 +10,10 @@ class_name HandButton
 @export var hand_type: Enums.HandType
 @export var is_active: bool
 
-var active: bool = false
-
 @onready var active_borders = $ActiveBorders
-@onready var icon = $Icon
+@onready var item_icon = $Icon
+
+var current_item: PickableItem
 
 
 func _ready():
@@ -25,28 +25,48 @@ func _ready():
 			$RightHandLabel.visible = true
 	
 	assert(G.player != null, "please move player up in scene tree")
-	G.player.inventory.active_hand_switched.connect(on_active_hand_switched)
-	G.player.inventory.item_picked.connect(on_pick_item)
-	G.player.inventory.item_dropped.connect(on_drop_item)
+	G.player.hands.active_hand_switched.connect(on_active_hand_switched)
+	G.player.hands.item_picked.connect(on_pick_item)
+	G.player.hands.item_dropped.connect(on_drop_item)
+	G.player.backpack.is_on.connect(on_wear_item)
+	G.player.backpack.is_removed.connect(on_pick_item)
+	G.player.backpack.item_is_packed_to_backpack.connect(on_drop_item)
 
 
 func on_active_hand_switched() -> void:
-	set_active(!active)
+	set_active(!is_active)
 
 
 func set_active(new_active: bool) -> void:
-	active = new_active
+	is_active = new_active
 	active_borders.visible = new_active
 
 
-func on_pick_item(active_hand_type: Enums.HandType, item_code: String) -> void:
-	if active_hand_type == hand_type:
-		var item_icon = load("res://Assets/Interface/Icons/{code}.png".format({
-			"code": item_code
+func on_pick_item(item: PickableItem) -> void:
+	if G.player.hands.active_hand == hand_type:
+		current_item = item
+		var icon_resource = load("res://Assets/Interface/Icons/{code}.png".format({
+			"code": item.code
 		}))
-		icon.texture = item_icon
+		item_icon.texture = icon_resource
 
 
-func on_drop_item(active_hand_type: Enums.HandType) -> void:
-	if active_hand_type == hand_type:
-		icon.texture = null
+func on_drop_item() -> void:
+	if G.player.hands.active_hand == hand_type:
+		item_icon.texture = null
+		current_item = null
+
+
+func on_wear_item(_item: PickableItem) -> void:
+	if G.player.hands.active_hand == hand_type:
+		item_icon.texture = null
+		current_item = null
+
+
+func _on_pressed():
+	var opened_backpack = G.player.backpack.opened_backpack
+	if opened_backpack != null:
+		if current_item == opened_backpack:
+			G.player.backpack.close()
+		else:
+			G.player.backpack.put_active_item(null)
