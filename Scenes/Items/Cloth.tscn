@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cctpyykqaibwr"]
+
+[ext_resource type="Script" path="res://Scripts/Items/ClothItem.gd" id="1_o1kpt"]
+
+[sub_resource type="TextMesh" id="TextMesh_g3gpf"]
+text = "cloth"
+font_size = 42
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_difg7"]
+size = Vector3(0.393494, 0.123657, 0.0640259)
+
+[node name="Cloth" type="RigidBody3D"]
+script = ExtResource("1_o1kpt")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+mesh = SubResource("TextMesh_g3gpf")
+
+[node name="Shape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00253296, -0.0134888, 0.00204468)
+shape = SubResource("BoxShape3D_difg7")

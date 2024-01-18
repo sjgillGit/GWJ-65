@@ -18,6 +18,7 @@ var may_move: bool = true
 
 @onready var hands: HandsController = get_node("HandsController")
 @onready var backpack: BackpackController = get_node("BackpackController")
+@onready var cloth: ClothController = get_node("ClothController")
 @onready var interaction: RayCast3D = get_node("CameraController/Camera/InteractionRay")
 
 func _ready() -> void:

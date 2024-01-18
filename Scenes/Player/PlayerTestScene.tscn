@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dqkr1iqdlrnte"]
+[gd_scene load_steps=14 format=3 uid="uid://dqkr1iqdlrnte"]
 
 [ext_resource type="PackedScene" uid="uid://brcvp8135a42f" path="res://Scenes/Player/Player.tscn" id="1_7sf08"]
 [ext_resource type="PackedScene" uid="uid://b2ng62uftnqqa" path="res://Scenes/Player/Interface/PlayerInterface.tscn" id="3_mol1n"]
 [ext_resource type="PackedScene" uid="uid://dfw4g2bn6k0x7" path="res://Scenes/Items/Screwdriver.tscn" id="3_n74j7"]
 [ext_resource type="PackedScene" uid="uid://wvd3v8y7rmyl" path="res://Scenes/Items/DebugPrintBox.tscn" id="4_3krxc"]
 [ext_resource type="PackedScene" uid="uid://do7y81r47wqcy" path="res://Scenes/Items/Backpack.tscn" id="5_3l5a8"]
+[ext_resource type="PackedScene" uid="uid://cctpyykqaibwr" path="res://Scenes/Items/Cloth.tscn" id="5_i834a"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qeyj7"]
 size = Vector2(20, 20)
@@ -94,7 +95,6 @@ shadow_enabled = true
 
 [node name="Screwdriver" parent="." instance=ExtResource("3_n74j7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05075, 1.56541, -4.38148)
-is_in_container = false
 
 [node name="DebugPrintBox" parent="." instance=ExtResource("4_3krxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.78425, 0.566835, -4.41099)
@@ -102,6 +102,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.78425, 0.566835, -4.41099)
 [node name="Backpack" parent="." node_paths=PackedStringArray("container") instance=ExtResource("5_3l5a8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.18702, 1.12088, -0.498131)
 container = [NodePath("../BackpackItems/Screwdriver")]
+
+[node name="Cloth" parent="." instance=ExtResource("5_i834a")]
+transform = Transform3D(0.389687, 0, 0.920948, 0, 1, 0, -0.920948, 0, 0.389687, -4.72698, 1.36911, 5.46467)
+code = "Cloth"
 
 [node name="BackpackItems" type="Node" parent="."]
 

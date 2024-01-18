@@ -8,6 +8,7 @@ extends Node
 class_name BackpackController
 
 @onready var hands_controller: HandsController = get_node("../HandsController")
+@onready var cloth_controller: ClothController = get_node("../ClothController")
 
 var backpack: BackpackItem
 var opened_backpack: BackpackItem
@@ -39,6 +40,7 @@ func wear(new_backpack: BackpackItem) -> void:
 	is_on.emit(new_backpack)
 	backpack = new_backpack
 	skip_one_frame = true
+	cloth_controller.skip_one_frame = true
 
 
 func take_off() -> void:

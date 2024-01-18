@@ -1,7 +1,7 @@
 extends ColorRect
 
 #--------------------
-# Interface for backpack icon
+# Interface for cloth icon
 # Contains only interface logic
 #--------------------
 
@@ -10,16 +10,16 @@ extends ColorRect
 
 func _ready():
 	assert(G.player != null, "please move player up in scene tree")
-	G.player.backpack.is_on.connect(on_wear_backpack)
-	G.player.backpack.is_removed.connect(on_take_off_backpack)
+	G.player.cloth.is_on.connect(on_wear_cloth)
+	G.player.cloth.is_removed.connect(on_take_off_cloth)
 
 
-func on_wear_backpack(backpack_item: BackpackItem) -> void:
+func on_wear_cloth(cloth_item: PickableItem) -> void:
 	var item_icon = load("res://Assets/Interface/Icons/{code}.png".format({
-		"code": backpack_item.code
+		"code": cloth_item.code
 	}))
 	icon.texture = item_icon
 
 
-func on_take_off_backpack(_backpack_item: BackpackItem) -> void:
+func on_take_off_cloth(_backpack_item: PickableItem) -> void:
 	icon.texture = null

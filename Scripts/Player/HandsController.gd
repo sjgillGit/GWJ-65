@@ -11,6 +11,7 @@ class_name HandsController
 @onready var right_item_parent: Node3D = get_node("../CameraController/Camera/RightItemParent")
 
 @onready var backpack_controller: BackpackController = get_node("../BackpackController")
+@onready var cloth_controller: ClothController = get_node("../ClothController")
 
 var left_item: PickableItem
 var right_item: PickableItem

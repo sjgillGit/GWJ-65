@@ -31,6 +31,8 @@ func _ready():
 	G.player.backpack.is_on.connect(on_wear_item)
 	G.player.backpack.is_removed.connect(on_pick_item)
 	G.player.backpack.item_is_packed_to_backpack.connect(on_drop_item)
+	G.player.cloth.is_on.connect(on_wear_item)
+	G.player.cloth.is_removed.connect(on_pick_item)
 
 
 func on_active_hand_switched() -> void:
