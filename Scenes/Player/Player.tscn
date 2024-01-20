@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://brcvp8135a42f"]
+[gd_scene load_steps=11 format=3 uid="uid://brcvp8135a42f"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_gpslx"]
 [ext_resource type="Script" path="res://Scripts/Player/Camera.gd" id="1_kcbck"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Player/Interaction.gd" id="3_hq6kq"]
 [ext_resource type="Script" path="res://Scripts/Player/HandsController.gd" id="5_q6nm8"]
 [ext_resource type="Script" path="res://Scripts/Player/BackpackController.gd" id="6_mmthk"]
+[ext_resource type="Script" path="res://Scripts/Player/ClothController.gd" id="7_njqke"]
 
 [sub_resource type="GDScript" id="GDScript_fb13t"]
 script/source = "extends Camera3D
@@ -85,3 +86,6 @@ script = ExtResource("5_q6nm8")
 
 [node name="BackpackController" type="Node" parent="."]
 script = ExtResource("6_mmthk")
+
+[node name="ClothController" type="Node" parent="."]
+script = ExtResource("7_njqke")
