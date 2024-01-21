@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx6ma1ppfpcog"]
+
+[ext_resource type="Theme" uid="uid://dnufrpxuvqrj3" path="res://Scenes/Opertator Tutorial/Operator Tutorial Assets/custom theme.tres" id="1_8t802"]
+[ext_resource type="Script" path="res://Scenes/Opertator Tutorial/Operator Tutorial Assets/Scripts/title screen.gd" id="2_3tg23"]
+[ext_resource type="Texture2D" uid="uid://biab6dv2xa0eu" path="res://Scenes/Opertator Tutorial/Operator Tutorial Assets/Images/background.png" id="3_6mqlf"]
+
+[node name="title screen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_8t802")
+script = ExtResource("2_3tg23")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_6mqlf")
+
+[node name="Main Menu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 1280.0
+offset_bottom = 700.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Main Menu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Placeholder Title"
+
+[node name="MainMenu Buttons" type="VBoxContainer" parent="Main Menu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="Operator Start Button" type="Button" parent="Main Menu/MainMenu Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Operator Start
+"
+
+[node name="Roamer Start Button" type="Button" parent="Main Menu/MainMenu Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Roamer Start
+"
+
+[node name="Operator Tutorial Button" type="Button" parent="Main Menu/MainMenu Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Operator Tutorial
+"
+
+[node name="Roamer Tutorial Button" type="Button" parent="Main Menu/MainMenu Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Roamer Tutorial"
+
+[node name="Options Button" type="Button" parent="Main Menu/MainMenu Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Options"
+
+[node name="Credits Button" type="Button" parent="Main Menu/MainMenu Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Credits"
+
+[node name="Exit Button" type="Button" parent="Main Menu/MainMenu Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Exit Button
+"
+
+[connection signal="pressed" from="Main Menu/MainMenu Buttons/Operator Start Button" to="." method="_on_operator_start_button_pressed"]
+[connection signal="pressed" from="Main Menu/MainMenu Buttons/Roamer Start Button" to="." method="_on_roamer_start_button_pressed"]
+[connection signal="pressed" from="Main Menu/MainMenu Buttons/Operator Tutorial Button" to="." method="_on_operator_tutorial_button_pressed"]
+[connection signal="pressed" from="Main Menu/MainMenu Buttons/Roamer Tutorial Button" to="." method="_on_roamer_tutorial_button_pressed"]
+[connection signal="pressed" from="Main Menu/MainMenu Buttons/Options Button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Main Menu/MainMenu Buttons/Credits Button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Main Menu/MainMenu Buttons/Exit Button" to="." method="_on_exit_button_pressed"]

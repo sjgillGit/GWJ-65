@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dnufrpxuvqrj3"]
+
+[ext_resource type="FontFile" uid="uid://btvylrgw2uovw" path="res://Scenes/Opertator Tutorial/Operator Tutorial Assets/Softers.otf" id="1_l1o5g"]
+
+[resource]
+default_font = ExtResource("1_l1o5g")
+default_font_size = 18

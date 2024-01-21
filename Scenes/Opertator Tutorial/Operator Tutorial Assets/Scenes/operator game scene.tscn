@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://djvkh5snphv7f"]
+
+[node name="operator game scene" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 446.0
+offset_top = 111.0
+offset_right = 486.0
+offset_bottom = 134.0
+text = "Replace With Operator Game Scene
+"

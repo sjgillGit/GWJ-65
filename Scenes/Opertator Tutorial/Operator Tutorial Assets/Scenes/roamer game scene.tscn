@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://butgeab85jjg2"]
+
+[node name="roamer game scene" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 424.0
+offset_top = 84.0
+offset_right = 680.0
+offset_bottom = 110.0
+text = "Replace with roamer game scene
+"

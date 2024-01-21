@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ty5h3s6eu3ly"]
+
+[node name="operator tutorial" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 395.0
+offset_top = 94.0
+offset_right = 634.0
+offset_bottom = 120.0
+text = "Replace with Operator Tutorial
+"
